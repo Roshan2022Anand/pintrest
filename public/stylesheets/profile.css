@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+#profile-card{
+    width: 400px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 0px black;
+    text-align: center;
+}
+#profile-card  *{
+    margin-top: 10px;
+}
+#profile-card img{
+    width: 50%;
+    border-radius: 50%;
+}
+#profile-card button{
+    border: none;
+    padding: 5px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+}

@@ -1,9 +1,37 @@
-var express = require('express');
-var router = express.Router();
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://127.0.0.1:27017/practice");
+const plm = require("passport-local-mongoose");
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+const userSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+    trim: true, // Remove leading/trailing whitespace
+  },
+  password: {
+    type: String
+  },
+  posts: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "PostMessage",
+    },
+  ],
+  dp: {
+    type: String, // Assuming a URL for the profile picture
+    default: "default-dp.jpg", // Provide a default image
+  },
+  email: {
+    type: String,
+    require: true,
+    unique: true,
+  },
+  fullname: {
+    type: String,
+    required: true,
+  }
 });
 
-module.exports = router;
+userSchema.plugin(plm);
+module.exports = mongoose.model("user", userSchema);

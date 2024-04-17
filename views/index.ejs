@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+  <main>
+    <%- include('loginPg.ejs')%>
+    <%- include('signupPg.ejs')%>
+  </main>
+  <script src="../javascripts/script.js"></script>
+</body>
+
 </html>

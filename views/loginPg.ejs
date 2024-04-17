@@ -1,0 +1,33 @@
+<div id="container">
+  <div id="logo"></div>
+  <p id="wlcm">Welcome to Pinterest</p>
+  <% if(error.length>0){%>
+    <p id="error-msg"><%= error%></p>
+  <%}%>
+  <form action="/login" method="post">
+    <label for="name">
+      Name
+      <input type="text" name="username" id="name" placeholder="name" />
+    </label>
+    <label for="userPassword">
+      Password
+      <input type="password" name="password" id="userPassword" placeholder="password" />
+    </label>
+    <input type="submit" value="Login">
+  </form>
+  <a href="">Forgot your password ?</a>
+  <div id="login-btns">
+    <p>OR</p>
+    <a href=""><button>Continue With Facebook</button></a>
+    <a href=""><button>Continue With Google</button></a>
+    <div id="terms-txt">
+      By continuing, you agree to Pinterest's Terms of Service; Opens a new tab
+      and acknowledge you've read our Privacy Policy; Opens a new tab. Notice at
+      collection; Opens a new tab.
+    </div>
+    <div id="signup">
+      <p>Not on Pinterest yet?<a href="" id="signup-pg-btn">Sign up</a></p>
+      <p>Are you a business?<a href="">Get started here!</a></p>
+    </div>
+  </div>
+</div>
